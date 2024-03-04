@@ -2,7 +2,6 @@ import Reviews from "./model.js";
 
 export const create = async(body) => {
     const { title, content = "" } = body;
-    console.log("logging body", body);
     if (!title) {
         throw new Error("Title is required");
     }
@@ -11,7 +10,7 @@ export const create = async(body) => {
 }
 
 export const index = async(query = {}) => {
-    return Reviews.find(query);
+    return Reviews.find(query).sort({ createdAt: -1 });
 }
 
 export const getById = async(id, query = {}) => {
@@ -32,7 +31,9 @@ export const update = async(id, body) => {
         review.content = content;
     }
 
-    review.status = "edited";
-
     return review.save();
+}
+
+export const deleteReview = async(id) => {
+    return Reviews.deleteOne({ _id: id });
 }

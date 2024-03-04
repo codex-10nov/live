@@ -11,11 +11,6 @@ const reviewSchema = new mongoose.Schema({
     },
     content: {
         type: String
-    },
-    status: {
-        type: String,
-        enum: ["created", "edited", "deleted"],
-        default: "created"
     }
 }, {
     timestamps: true

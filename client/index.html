@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Sockets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .input-block {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #my-table {
+            display: none;
+        }
+        #ws-edit {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Review:</h1>
+
+    <div class="input-block">
+        <input type="text" id="ws-input-title" placeholder="Enter Title">
+        <input type="text" id="ws-input-content" placeholder="Enter Content">
+        <button id="ws-send">Send review</button>
+        <button id="ws-edit">Edit review</button>
+    </div>
+
+    <table id="my-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="my-table-body"></tbody>
+    </table>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
